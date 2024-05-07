@@ -2,7 +2,9 @@
  "actions": [],
  "allow_rename": 1,
  "creation": "2024-05-07 09:57:55.164446",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "biostar_server_login_section",

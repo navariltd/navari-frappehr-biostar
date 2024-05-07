@@ -1,7 +1,7 @@
-## Navari Biostar Integration
+## Frappe HR integration with Biostar Biometric
 
-Biometrics Integration Application with FrappeHR
+Frappe HR integration with Biostar Biometric
 
 #### License
 
-mit
+GNU
