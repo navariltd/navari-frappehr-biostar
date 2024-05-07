@@ -1,22 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-07 09:36:23.363628",
+ "creation": "2024-05-07 09:57:55.164446",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "biostar_server_login_section",
   "username",
   "password",
-  "column_break_zveb",
+  "column_break_bpij",
   "ta_url",
   "ta_auth_details_section",
   "api_key",
-  "column_break_dzwv",
+  "column_break_rqqk",
   "api_secret",
-  "fetch_attendance_records_section",
+  "fetch_attendance_logs_section",
   "start_date",
-  "column_break_gkzz",
+  "column_break_twzo",
   "end_date"
  ],
  "fields": [
@@ -35,10 +35,12 @@
   {
    "fieldname": "password",
    "fieldtype": "Password",
-   "label": "Password"
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_zveb",
+   "fieldname": "column_break_bpij",
    "fieldtype": "Column Break"
   },
   {
@@ -57,7 +59,7 @@
    "label": "API Key"
   },
   {
-   "fieldname": "column_break_dzwv",
+   "fieldname": "column_break_rqqk",
    "fieldtype": "Column Break"
   },
   {
@@ -66,9 +68,9 @@
    "label": "API Secret"
   },
   {
-   "fieldname": "fetch_attendance_records_section",
+   "fieldname": "fetch_attendance_logs_section",
    "fieldtype": "Section Break",
-   "label": "Fetch Attendance Records"
+   "label": "Fetch Attendance Logs"
   },
   {
    "fieldname": "start_date",
@@ -76,7 +78,7 @@
    "label": "Start Date"
   },
   {
-   "fieldname": "column_break_gkzz",
+   "fieldname": "column_break_twzo",
    "fieldtype": "Column Break"
   },
   {
@@ -86,8 +88,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2024-05-07 09:42:46.361157",
+ "modified": "2024-05-07 10:01:24.047920",
  "modified_by": "Administrator",
  "module": "Navari Biostar Integration",
  "name": "Biostar Settings",
@@ -97,10 +100,8 @@
    "create": 1,
    "delete": 1,
    "email": 1,
-   "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1
