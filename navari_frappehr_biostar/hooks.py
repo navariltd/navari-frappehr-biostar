@@ -1,17 +1,9 @@
 app_name = "navari_frappehr_biostar"
-<<<<<<< HEAD
 app_title = "Navari Frappehr Biostar"
 app_publisher = "Navari Limited"
 app_description = "Frappe HR integration with Biostar Biometric"
 app_email = "mwendwa@navari.co.ke"
 app_license = "gpl-3.0"
-=======
-app_title = "Navari FrappeHR Biostar"
-app_publisher = "navariltd"
-app_description = "Frappe HR integration with Biostar Biometric"
-app_email = "mwendwa@navari.co.ke"
-app_license = "GNU"
->>>>>>> origin/develop
 # required_apps = []
 
 # Includes in <head>
@@ -234,7 +226,3 @@ app_license = "GNU"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/develop

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 Navari Frappehr Biostar
-=======
-Navari Biostar Integration
->>>>>>> origin/develop

@@ -1,15 +1,9 @@
 [project]
 name = "navari_frappehr_biostar"
 authors = [
-<<<<<<< HEAD
     { name = "Navari Limited", email = "mwendwa@navari.co.ke"}
 ]
 description = "Frappe HR integration with Biostar Biometric"
-=======
-    { name = "navariltd", email = "mwendwa@navari.co.ke"}
-]
-description = "Biometrics Integration Application with FrappeHR"
->>>>>>> origin/develop
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
