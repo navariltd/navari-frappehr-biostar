@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-07 15:20:13.909861",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "biostar_server_login_section",
+  "username",
+  "password",
+  "column_break_jltg",
+  "ta_url",
+  "ta_auth_details_section",
+  "api_key",
+  "column_break_jynp",
+  "api_secret",
+  "fetch_attendance_logs_section",
+  "start_date",
+  "column_break_vwvl",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "biostar_server_login_section",
+   "fieldtype": "Section Break",
+   "label": "Biostar Server Login"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jltg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ta_url",
+   "fieldtype": "Data",
+   "label": "TA URL"
+  },
+  {
+   "fieldname": "ta_auth_details_section",
+   "fieldtype": "Section Break",
+   "label": "TA Auth Details"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key"
+  },
+  {
+   "fieldname": "column_break_jynp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret"
+  },
+  {
+   "fieldname": "fetch_attendance_logs_section",
+   "fieldtype": "Section Break",
+   "label": "Fetch Attendance Logs"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_vwvl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-05-07 15:23:17.634835",
+ "modified_by": "Administrator",
+ "module": "Navari Frappehr Biostar",
+ "name": "Biostar Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
