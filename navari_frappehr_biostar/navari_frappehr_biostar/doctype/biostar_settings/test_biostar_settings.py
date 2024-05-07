@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 # Copyright (c) 2024, Navari Limited and Contributors
 # See license.txt
 
 
 import frappe
+=======
+# Copyright (c) 2024, navariltd and Contributors
+# See license.txt
+
+# import frappe
+>>>>>>> origin/develop
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestBiostarSettings(FrappeTestCase):
+<<<<<<< HEAD
     def setUp(self):
         """Initialize Frappe test environment"""
         frappe.init(site="", sites_path="")
@@ -40,3 +48,6 @@ class TestBiostarSettings(FrappeTestCase):
         # Clean up after each test
         frappe.db.rollback()
         frappe.destroy()
+=======
+	pass
+>>>>>>> origin/develop

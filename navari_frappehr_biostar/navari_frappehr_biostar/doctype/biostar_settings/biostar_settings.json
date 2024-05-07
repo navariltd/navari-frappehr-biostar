@@ -1,7 +1,11 @@
 {
  "actions": [],
  "allow_rename": 1,
+<<<<<<< HEAD
  "creation": "2024-05-07 15:20:13.909861",
+=======
+ "creation": "2024-05-07 09:57:55.164446",
+>>>>>>> origin/develop
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -10,6 +14,7 @@
   "biostar_server_login_section",
   "username",
   "password",
+<<<<<<< HEAD
   "column_break_jltg",
   "ta_url",
   "ta_auth_details_section",
@@ -19,6 +24,17 @@
   "fetch_attendance_logs_section",
   "start_date",
   "column_break_vwvl",
+=======
+  "column_break_bpij",
+  "ta_url",
+  "ta_auth_details_section",
+  "api_key",
+  "column_break_rqqk",
+  "api_secret",
+  "fetch_attendance_logs_section",
+  "start_date",
+  "column_break_twzo",
+>>>>>>> origin/develop
   "end_date"
  ],
  "fields": [
@@ -42,7 +58,11 @@
    "reqd": 1
   },
   {
+<<<<<<< HEAD
    "fieldname": "column_break_jltg",
+=======
+   "fieldname": "column_break_bpij",
+>>>>>>> origin/develop
    "fieldtype": "Column Break"
   },
   {
@@ -61,7 +81,11 @@
    "label": "API Key"
   },
   {
+<<<<<<< HEAD
    "fieldname": "column_break_jynp",
+=======
+   "fieldname": "column_break_rqqk",
+>>>>>>> origin/develop
    "fieldtype": "Column Break"
   },
   {
@@ -80,7 +104,11 @@
    "label": "Start Date"
   },
   {
+<<<<<<< HEAD
    "fieldname": "column_break_vwvl",
+=======
+   "fieldname": "column_break_twzo",
+>>>>>>> origin/develop
    "fieldtype": "Column Break"
   },
   {
@@ -92,9 +120,15 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-05-07 15:23:17.634835",
  "modified_by": "Administrator",
  "module": "Navari Frappehr Biostar",
+=======
+ "modified": "2024-05-07 10:01:24.047920",
+ "modified_by": "Administrator",
+ "module": "Navari Biostar Integration",
+>>>>>>> origin/develop
  "name": "Biostar Settings",
  "owner": "Administrator",
  "permissions": [
