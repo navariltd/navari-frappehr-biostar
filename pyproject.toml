@@ -1,5 +1,5 @@
 [project]
-name = "navari_biostar_integration"
+name = "navari_frappehr_biostar"
 authors = [
     { name = "navariltd", email = "mwendwa@navari.co.ke"}
 ]

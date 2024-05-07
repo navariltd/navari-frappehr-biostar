@@ -1,24 +1,24 @@
-app_name = "navari_biostar_integration"
-app_title = "Navari Biostar Integration"
+app_name = "navari_frappehr_biostar"
+app_title = "Navari FrappeHR Biostar"
 app_publisher = "navariltd"
-app_description = "Biometrics Integration Application with FrappeHR"
+app_description = "Frappe HR integration with Biostar Biometric"
 app_email = "mwendwa@navari.co.ke"
-app_license = "mit"
+app_license = "GNU"
 # required_apps = []
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/navari_biostar_integration/css/navari_biostar_integration.css"
-# app_include_js = "/assets/navari_biostar_integration/js/navari_biostar_integration.js"
+# app_include_css = "/assets/navari_frappehr_biostar/css/navari_frappehr_biostar.css"
+# app_include_js = "/assets/navari_frappehr_biostar/js/navari_frappehr_biostar.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/navari_biostar_integration/css/navari_biostar_integration.css"
-# web_include_js = "/assets/navari_biostar_integration/js/navari_biostar_integration.js"
+# web_include_css = "/assets/navari_frappehr_biostar/css/navari_frappehr_biostar.css"
+# web_include_js = "/assets/navari_frappehr_biostar/js/navari_frappehr_biostar.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "navari_biostar_integration/public/scss/website"
+# website_theme_scss = "navari_frappehr_biostar/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -36,7 +36,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "navari_biostar_integration/public/icons.svg"
+# app_include_icons = "navari_frappehr_biostar/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -60,43 +60,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "navari_biostar_integration.utils.jinja_methods",
-# 	"filters": "navari_biostar_integration.utils.jinja_filters"
+# 	"methods": "navari_frappehr_biostar.utils.jinja_methods",
+# 	"filters": "navari_frappehr_biostar.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "navari_biostar_integration.install.before_install"
-# after_install = "navari_biostar_integration.install.after_install"
+# before_install = "navari_frappehr_biostar.install.before_install"
+# after_install = "navari_frappehr_biostar.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "navari_biostar_integration.uninstall.before_uninstall"
-# after_uninstall = "navari_biostar_integration.uninstall.after_uninstall"
+# before_uninstall = "navari_frappehr_biostar.uninstall.before_uninstall"
+# after_uninstall = "navari_frappehr_biostar.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "navari_biostar_integration.utils.before_app_install"
-# after_app_install = "navari_biostar_integration.utils.after_app_install"
+# before_app_install = "navari_frappehr_biostar.utils.before_app_install"
+# after_app_install = "navari_frappehr_biostar.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "navari_biostar_integration.utils.before_app_uninstall"
-# after_app_uninstall = "navari_biostar_integration.utils.after_app_uninstall"
+# before_app_uninstall = "navari_frappehr_biostar.utils.before_app_uninstall"
+# after_app_uninstall = "navari_frappehr_biostar.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "navari_biostar_integration.notifications.get_notification_config"
+# notification_config = "navari_frappehr_biostar.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -135,39 +135,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"navari_biostar_integration.tasks.all"
+# 		"navari_frappehr_biostar.tasks.all"
 # 	],
 # 	"daily": [
-# 		"navari_biostar_integration.tasks.daily"
+# 		"navari_frappehr_biostar.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"navari_biostar_integration.tasks.hourly"
+# 		"navari_frappehr_biostar.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"navari_biostar_integration.tasks.weekly"
+# 		"navari_frappehr_biostar.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"navari_biostar_integration.tasks.monthly"
+# 		"navari_frappehr_biostar.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "navari_biostar_integration.install.before_tests"
+# before_tests = "navari_frappehr_biostar.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "navari_biostar_integration.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "navari_frappehr_biostar.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "navari_biostar_integration.task.get_dashboard_data"
+# 	"Task": "navari_frappehr_biostar.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -181,13 +181,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["navari_biostar_integration.utils.before_request"]
-# after_request = ["navari_biostar_integration.utils.after_request"]
+# before_request = ["navari_frappehr_biostar.utils.before_request"]
+# after_request = ["navari_frappehr_biostar.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["navari_biostar_integration.utils.before_job"]
-# after_job = ["navari_biostar_integration.utils.after_job"]
+# before_job = ["navari_frappehr_biostar.utils.before_job"]
+# after_job = ["navari_frappehr_biostar.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -217,7 +217,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"navari_biostar_integration.auth.validate"
+# 	"navari_frappehr_biostar.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
@@ -226,4 +226,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

@@ -37,7 +37,7 @@ frappe.ui.form.on("Biostar Settings", {
     loader.style.display = "block";
     frappe.call({
       method:
-        "navari_biostar_integration.controllers.biostar_calls.add_checkin_logs_for_specified_dates",
+        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_specified_dates",
       args: {
         start_date: frm.doc.start_date,
         end_date: frm.doc.end_date,
