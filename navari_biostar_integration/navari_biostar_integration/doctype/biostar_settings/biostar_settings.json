@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-07 09:36:23.363628",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "biostar_server_login_section",
+  "username",
+  "password",
+  "column_break_zveb",
+  "ta_url",
+  "ta_auth_details_section",
+  "api_key",
+  "column_break_dzwv",
+  "api_secret",
+  "fetch_attendance_records_section",
+  "start_date",
+  "column_break_gkzz",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "biostar_server_login_section",
+   "fieldtype": "Section Break",
+   "label": "Biostar Server Login"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "column_break_zveb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ta_url",
+   "fieldtype": "Data",
+   "label": "TA URL"
+  },
+  {
+   "fieldname": "ta_auth_details_section",
+   "fieldtype": "Section Break",
+   "label": "TA Auth Details"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key"
+  },
+  {
+   "fieldname": "column_break_dzwv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret"
+  },
+  {
+   "fieldname": "fetch_attendance_records_section",
+   "fieldtype": "Section Break",
+   "label": "Fetch Attendance Records"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_gkzz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-07 09:42:46.361157",
+ "modified_by": "Administrator",
+ "module": "Navari Biostar Integration",
+ "name": "Biostar Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
