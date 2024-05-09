@@ -39,7 +39,5 @@ class TestBiostarSettings(FrappeTestCase):
 
     def tearDown(self):
         """Clean up after each test"""
-        try:
-            frappe.db.rollback()
-        finally:
-            frappe.destroy()
+        frappe.db.rollback()
+        # frappe.destroy()
