@@ -68,5 +68,3 @@ Suprema Biostar is a web-based security platform that manages biometric access c
 - send_to_erpnext: Sends fetched attendance records to ERPNext instance
 
 #### License
-
-gpl-3.0
