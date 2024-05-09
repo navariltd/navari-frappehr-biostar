@@ -26,6 +26,9 @@ This doctype is used to store the following configuration details:
 
 Generate the API key and API secret and feed them in the TA Auth Details section.
 
+![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
+
+
  #### Fetching Attendance Records
 Only two endpoints have been used to retrive attendance report from biostar server:
 1. [Authentication](https://bs2api.biostar2.com/#0b54ae8b-6744-44dd-8556-8001ae3139ff)
