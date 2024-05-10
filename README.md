@@ -48,17 +48,18 @@ Generate the API key and API secret and feed them in the TA Auth Details section
 
 ```
 To generate the keys above navigate to the "My Account" section
+```
 
 ![Screenshot from 2024-05-10 12-49-05](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/ec9144e5-8ffd-4f0b-a5da-73ef8fcf2216)
 
-
+```
 Go to "Settings" 
 
 Click on "API Access" and Generate Keys
-
+```
 ![Screenshot from 2024-05-10 12-49-19](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/ee40e69d-5b3a-48c1-b6f7-af9a2dae5849)
 
-```
+
 
 ![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
 
