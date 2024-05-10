@@ -7,28 +7,31 @@ Biostar is a leading provider of biometric solutions specializing in advanced te
 
 Their solutions leverage biometric authentication methods such as fingerprint recognition, facial recognition, and iris scanning to provide accurate and secure identification of individuals.
 
-Biostar's products and services are designed to enhance security measures and improve efficiency in various industries. With a focus on innovation and realiability, they are trusted by businesses worldwide to ensure accurate and secure identification.
+**Biostar's** products and services are designed to enhance security measures and improve efficiency in various industries. With a focus on innovation and realiability, they are trusted by businesses worldwide to ensure accurate and secure identification.
 
-Frappe HR on the other hand is an independent, fully-featured people management system that offers a comprehensive suite of HR functionalities. Originally part of the ERPNext ecosystem, Frappe HR has evolved into a standalone solution focused on meeting the diverse needs of modern HR departments and organizations.
+**Frappe HR** on the other hand is an independent, fully-featured people management system that offers a comprehensive suite of HR functionalities. Originally part of the ERPNext ecosystem, Frappe HR has evolved into a standalone solution focused on meeting the diverse needs of modern HR departments and organizations.
 
-It contains
+**It contains**
 - Payroll Management:
 - Leave Management:
 - Recruitment Management
 - Employee Self-Service Portal
+- Shift Management
+- Time and Attendance 
+- Biometric Integration
 
 ### Overview
-This Frappe application offers a robust integration with Biostar Biometrics, enabling seamless synchronization of attendance records based on specific user configurations. It features a dedicated single doctype, "Biometric Settings," which securely manages user credentials and essential configuration details required for effective integration.
+This Frappe application offers a robust integration with Suprema Biostar Biometrics, enabling seamless synchronization of attendance records based on specific user configurations. It features a dedicated single doctype, "Biometric Settings," which securely manages user credentials and essential configuration details required for effective integration.
 
 The application streamlines the process of fetching and updating attendance data directly into an Frappe HR instance, making it an invaluable tool for organizations looking to enhance their workforce management systems. With this integration, users can easily automate the retrieval of attendance records from Biostar Biometrics, ensuring both accuracy and efficiency in tracking employee attendance and access control events.
 
 #### Features
-- Single doctype ("Biometric Settings") to store user configurations.
+- Single doctype **("Biometric Settings")** to store user configurations.
 - Fetch attendance records from Biostar Biometrics
 - Automatic synchronization of attendance data into an Frappe H instance.
 
 #### DocTypes
-Biostar Settings
+<h4>Biostar Settings</h4>
 
 This doctype is used to store the following configuration details:
 
@@ -42,6 +45,15 @@ This doctype is used to store the following configuration details:
 7. **End Date**: The end date for fetching attendance records
 
 Generate the API key and API secret and feed them in the TA Auth Details section.
+
+```
+To generate the keys above navigate to the "My Account" section
+
+Go to "Settings" 
+
+Click on "API Access" and Generate Keys
+
+```
 
 ![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
 
@@ -78,12 +90,6 @@ This application provides both scheduled tasks and manual functions to fetch and
 4. To manually trigger attendance data synchronization:
     - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
     - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
-    
-
-
-
-#### Summary
-The integration between Frappe HR and Suprema Biostar leverages the advanced biometric capabilities of Biostar to enhance the workforce management system of Frappe HR. By integrating these systems, organizations benefit from a streamlined approach to managing employee attendance, leveraging secure biometric technologies such as fingerprint and facial recognition.
 
 
 ##### Key features
