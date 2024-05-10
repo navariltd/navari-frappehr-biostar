@@ -47,8 +47,7 @@ The application streamlines the process of fetching and updating attendance data
 
 6. **updateSettings**: Allows users to update or modify the Biometric Settings directly from the Frappe interface, including API keys, user credentials, and synchronization settings, making the system adaptable to changes in the operational environment or in user requirements.
 
-#### Impact
-This integration not only enhances security and operational efficiency but also supports compliance with labor regulations by maintaining accurate and verifiable attendance records. It reduces the administrative burden of manually managing attendance data, thus allowing HR personnel to focus on more strategic tasks.
+
 
 
 #### DocTypes
@@ -90,7 +89,11 @@ One needs to assign shifts to users on the biostar server, set up schedules and 
 This enables creation of checkin/checkout logs on the biostar server.
 
 
- 
+#### Impact
+This integration not only enhances security and operational efficiency but also supports compliance with labor regulations by maintaining accurate and verifiable attendance records. It reduces the administrative burden of manually managing attendance data, thus allowing HR personnel to focus on more strategic tasks.
+
+
+
 #### Installation
 1. Ensure you have a working Frappe and ERPNext instance
 2. Clone this repository into your Frappe bench apps directory.
