@@ -59,12 +59,14 @@ Click on "API Access" and Generate Keys
 ```
 ![Screenshot from 2024-05-10 12-49-19](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/ee40e69d-5b3a-48c1-b6f7-af9a2dae5849)
 
-
+```
+Add the generated keys to the Biometric Settings Form and save
+```
 
 ![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
 
 
- #### Fetching Attendance Records
+#### Fetching Attendance Records
 Only two endpoints have been used to retrive attendance report from biostar server:
 1. [Authentication](https://bs2api.biostar2.com/#0b54ae8b-6744-44dd-8556-8001ae3139ff)
 2. [How to retrieve attendance report in json format](https://support.supremainc.com/en/support/solutions/articles/24000073530--biostar-2-ta-api-how-to-retrieve-report-in-json-format-via-biostar-2-ta-api)
