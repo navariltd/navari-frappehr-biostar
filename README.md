@@ -25,10 +25,31 @@ This Frappe application offers a robust integration with Suprema Biostar Biometr
 
 The application streamlines the process of fetching and updating attendance data directly into an Frappe HR instance, making it an invaluable tool for organizations looking to enhance their workforce management systems. With this integration, users can easily automate the retrieval of attendance records from Biostar Biometrics, ensuring both accuracy and efficiency in tracking employee attendance and access control events.
 
-#### Features
-- Single doctype **("Biometric Settings")** to store user configurations.
-- Fetch attendance records from Biostar Biometrics
-- Automatic synchronization of attendance data into an Frappe H instance.
+
+##### Key features
+1. **Biometric Integration**: Securely and accurately identify individuals using fingerprint and facial recognition, ensuring reliable attendance tracking.
+2. **Automatic Data Sync**: Seamlessly sync attendance data from Biostar Biometrics to Frappe HR, simplifying the attendance management process.
+3. **Configurable Settings**: Utilize the "Biometric Settings" doctype to easily configure and manage integration settings such as API keys, user credentials, and synchronization intervals.
+4. **Manual and Scheduled Fetching**: Options to manually trigger data fetching or set up scheduled tasks for automatic updates, providing flexibility in how data is retrieved and managed.
+
+
+#### Key Functions
+
+1. **BiostarConnect**: This function is crucial as it establishes and manages the connection to the Biostar Biometrics system. It handles all communications between Frappe HR and Biostar, ensuring secure and reliable data transfer.
+
+2. **fetchAttendanceRecords**: This function fetches attendance data from Biostar, using date ranges provided by the user. It efficiently processes this data, readying it for synchronization with the Frappe HR database.
+
+3. **sendToFrappeHR**: After fetching the data from Biostar, this function sends it to the FrappeHR instance. It ensures that attendance records are accurately reflected in the ERP system, aligning with HR and payroll modules for comprehensive management.
+
+4. **scheduleSync**: Automates the process of data synchronization. Users can configure the frequency at which the synchronization occurs, whether daily, weekly, or monthly, ensuring that the data in Frappe HR is always up to date without manual intervention.
+
+5. **encryptCredentials**: Given the sensitive nature of user credentials and API keys, this function encrypts this information before storing it in the database. This practice enhances the security of the system, protecting it from unauthorized access.
+
+6. **updateSettings**: Allows users to update or modify the Biometric Settings directly from the Frappe interface, including API keys, user credentials, and synchronization settings, making the system adaptable to changes in the operational environment or in user requirements.
+
+#### Impact
+This integration not only enhances security and operational efficiency but also supports compliance with labor regulations by maintaining accurate and verifiable attendance records. It reduces the administrative burden of manually managing attendance data, thus allowing HR personnel to focus on more strategic tasks.
+
 
 #### DocTypes
 <h4>Biostar Settings</h4>
@@ -74,6 +95,8 @@ Only two endpoints have been used to retrive attendance report from biostar serv
 One needs to assign shifts to users on the biostar server, set up schedules and schedule templates on the biostar server, [here is a summary](https://www.youtube.com/watch?v=lqp8OEcPRyI&t=1023s) of how to do it. <br>
 This enables creation of checkin/checkout logs on the biostar server.
 
+
+
 #### Installation
 1. Ensure you have a working Frappe and ERPNext instance
 2. Clone this repository into your Frappe bench apps directory.
@@ -98,27 +121,3 @@ This application provides both scheduled tasks and manual functions to fetch and
 4. To manually trigger attendance data synchronization:
     - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
     - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
-
-
-##### Key features
-1. **Biometric Integration**: Securely and accurately identify individuals using fingerprint and facial recognition, ensuring reliable attendance tracking.
-2. **Automatic Data Sync**: Seamlessly sync attendance data from Biostar Biometrics to Frappe HR, simplifying the attendance management process.
-3. **Configurable Settings**: Utilize the "Biometric Settings" doctype to easily configure and manage integration settings such as API keys, user credentials, and synchronization intervals.
-4. **Manual and Scheduled Fetching**: Options to manually trigger data fetching or set up scheduled tasks for automatic updates, providing flexibility in how data is retrieved and managed.
-
-#### Impact
-This integration not only enhances security and operational efficiency but also supports compliance with labor regulations by maintaining accurate and verifiable attendance records. It reduces the administrative burden of manually managing attendance data, thus allowing HR personnel to focus on more strategic tasks.
-
-#### Key Functions
-
-1. **BiostarConnect**: This function is crucial as it establishes and manages the connection to the Biostar Biometrics system. It handles all communications between Frappe HR and Biostar, ensuring secure and reliable data transfer.
-
-2. **fetchAttendanceRecords**: This function fetches attendance data from Biostar, using date ranges provided by the user. It efficiently processes this data, readying it for synchronization with the Frappe HR database.
-
-3. **sendToFrappeHR**: After fetching the data from Biostar, this function sends it to the FrappeHR instance. It ensures that attendance records are accurately reflected in the ERP system, aligning with HR and payroll modules for comprehensive management.
-
-4. **scheduleSync**: Automates the process of data synchronization. Users can configure the frequency at which the synchronization occurs, whether daily, weekly, or monthly, ensuring that the data in Frappe HR is always up to date without manual intervention.
-
-5. **encryptCredentials**: Given the sensitive nature of user credentials and API keys, this function encrypts this information before storing it in the database. This practice enhances the security of the system, protecting it from unauthorized access.
-
-6. **updateSettings**: Allows users to update or modify the Biometric Settings directly from the Frappe interface, including API keys, user credentials, and synchronization settings, making the system adaptable to changes in the operational environment or in user requirements.
