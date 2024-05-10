@@ -65,6 +65,24 @@ This doctype is used to store the following configuration details:
 6. **Start Date**: The start date for fetching attendance records
 7. **End Date**: The end date for fetching attendance records
 
+
+
+
+
+#### Installation
+1. Ensure you have a working Frappe and ERPNext instance
+2. Clone this repository into your Frappe bench apps directory.
+
+ ``` 
+ git clone https://github.com/navariltd/navari-frappehr-biostar.git
+ ```
+
+ 3. Install the app into your site
+ ``` 
+ bench --site [your-site-name] install-app navari_frappehr_biostar
+ ```
+ 4. Configure the "Biometric Settings" doctype with appropriate values.
+
 Generate the API key and API secret and feed them in the TA Auth Details section.
 
 ```
@@ -95,21 +113,6 @@ Only two endpoints have been used to retrive attendance report from biostar serv
 One needs to assign shifts to users on the biostar server, set up schedules and schedule templates on the biostar server, [here is a summary](https://www.youtube.com/watch?v=lqp8OEcPRyI&t=1023s) of how to do it. <br>
 This enables creation of checkin/checkout logs on the biostar server.
 
-
-
-#### Installation
-1. Ensure you have a working Frappe and ERPNext instance
-2. Clone this repository into your Frappe bench apps directory.
-
- ``` 
- git clone https://github.com/navariltd/navari-frappehr-biostar.git
- ```
-
- 3. Install the app into your site
- ``` 
- bench --site [your-site-name] install-app navari_frappehr_biostar
- ```
- 4. Configure the "Biometric Settings" doctype with appropriate values.
 
  #### Usage
 This application provides both scheduled tasks and manual functions to fetch and synchronize attendance data from Biostar Biometrics API based on the configurations set in the "Biometric Settings" doctype.
