@@ -1,14 +1,31 @@
 ## Biostar Biometrics Integration for Frappe
 FrappeHR integration with Biostar Biometrics
 
-### Overview
-This Frappe application provides integration with Biostar Biometrics to fetch attendance records bases on user-specified settings. The application uses a custom single doctype called "Biometic Settings" to securely store user credentials and configuration details needed for the integration.
 
+### Introduction
+Biostar is a leading provider of biometric solutions specializing in advanced technologies for time and attendance management, access control, and workforce management.
+
+Their solutions leverage biometric authentication methods such as fingerprint recognition, facial recognition, and iris scanning to provide accurate and secure identification of individuals.
+
+Biostar's products and services are designed to enhance security measures and improve efficiency in various industries. With a focus on innovation and realiability, they are trusted by businesses worldwide to ensure accurate and secure identification.
+
+Frappe HR on the other hand is an independent, fully-featured people management system that offers a comprehensive suite of HR functionalities. Originally part of the ERPNext ecosystem, Frappe HR has evolved into a standalone solution focused on meeting the diverse needs of modern HR departments and organizations.
+
+It contains
+- Payroll Management:
+- Leave Management:
+- Recruitment Management
+- Employee Self-Service Portal
+
+### Overview
+This Frappe application offers a robust integration with Biostar Biometrics, enabling seamless synchronization of attendance records based on specific user configurations. It features a dedicated single doctype, "Biometric Settings," which securely manages user credentials and essential configuration details required for effective integration.
+
+The application streamlines the process of fetching and updating attendance data directly into an Frappe HR instance, making it an invaluable tool for organizations looking to enhance their workforce management systems. With this integration, users can easily automate the retrieval of attendance records from Biostar Biometrics, ensuring both accuracy and efficiency in tracking employee attendance and access control events.
 
 #### Features
-- Single doctype ("Biometric Settings") to store configurations.
+- Single doctype ("Biometric Settings") to store user configurations.
 - Fetch attendance records from Biostar Biometrics
-- Automatic synchronization of attendance data into an ERPNext instance.
+- Automatic synchronization of attendance data into an Frappe H instance.
 
 #### DocTypes
 Biostar Settings
@@ -16,13 +33,13 @@ Biostar Settings
 This doctype is used to store the following configuration details:
 
 
-1. Username: The user id used to log in to this page
-2. Password: The password used to log in to this page
-3. TA URL: The time and attendance URL
-4. API Key: API key generated for the user
-5. API Secret: API Secret generated for the user
-6. Start Date: The start date for fetching attendance records
-7. End Date: The end date for fetching attendance records
+1. **Username**: The user id used to log in to this page
+2. **Password**: The password used to log in to this page
+3. **TA URL**: The time and attendance URL
+4. **API Key**: API key generated for the user
+5. **API Secret**: API Secret generated for the user
+6. **Start Date**: The start date for fetching attendance records
+7. **End Date**: The end date for fetching attendance records
 
 Generate the API key and API secret and feed them in the TA Auth Details section.
 
@@ -52,19 +69,42 @@ This enables creation of checkin/checkout logs on the biostar server.
  4. Configure the "Biometric Settings" doctype with appropriate values.
 
  #### Usage
- This application includes scheduled tasks and manual functions that can be triggered to fetch and sync attendance data from Biostar Biometrics api based on the configurations you set in the "Biometric Settings"
+This application provides both scheduled tasks and manual functions to fetch and synchronize attendance data from Biostar Biometrics API based on the configurations set in the "Biometric Settings" doctype.
+
+**Manual Trigger:**
+1. Navigate to the "Biometric Settings" doctype.
+2. Fill in the required configuration details such as Username, Password, API Key, API Secret, Callback URL, Start Date, and End Date.
+3. Save the settings.
+4. To manually trigger attendance data synchronization:
+    - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
+    - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
+    
 
 
 
 #### Summary
-Suprema Biostar is a web-based security platform that manages biometric access control systems and time attendance solutions.
+The integration between Frappe HR and Suprema Biostar leverages the advanced biometric capabilities of Biostar to enhance the workforce management system of Frappe HR. By integrating these systems, organizations benefit from a streamlined approach to managing employee attendance, leveraging secure biometric technologies such as fingerprint and facial recognition.
+
 
 ##### Key features
-1. Biometric Integration: Fingerprint, face recognition and card-based access for versatile and secure access control options.
-2. Attendance Record Fetch: Fetch attendance records from the system
+1. **Biometric Integration**: Securely and accurately identify individuals using fingerprint and facial recognition, ensuring reliable attendance tracking.
+2. **Automatic Data Sync**: Seamlessly sync attendance data from Biostar Biometrics to Frappe HR, simplifying the attendance management process.
+3. **Configurable Settings**: Utilize the "Biometric Settings" doctype to easily configure and manage integration settings such as API keys, user credentials, and synchronization intervals.
+4. **Manual and Scheduled Fetching**: Options to manually trigger data fetching or set up scheduled tasks for automatic updates, providing flexibility in how data is retrieved and managed.
+
+#### Impact
+This integration not only enhances security and operational efficiency but also supports compliance with labor regulations by maintaining accurate and verifiable attendance records. It reduces the administrative burden of manually managing attendance data, thus allowing HR personnel to focus on more strategic tasks.
 
 #### Key Functions
-- BiostarConnect: Handles connection and data fetching from Biostar
-- send_to_erpnext: Sends fetched attendance records to ERPNext instance
 
-#### License
+1. **BiostarConnect**: This function is crucial as it establishes and manages the connection to the Biostar Biometrics system. It handles all communications between Frappe HR and Biostar, ensuring secure and reliable data transfer.
+
+2. **fetchAttendanceRecords**: This function fetches attendance data from Biostar, using date ranges provided by the user. It efficiently processes this data, readying it for synchronization with the Frappe HR database.
+
+3. **sendToFrappeHR**: After fetching the data from Biostar, this function sends it to the FrappeHR instance. It ensures that attendance records are accurately reflected in the ERP system, aligning with HR and payroll modules for comprehensive management.
+
+4. **scheduleSync**: Automates the process of data synchronization. Users can configure the frequency at which the synchronization occurs, whether daily, weekly, or monthly, ensuring that the data in Frappe HR is always up to date without manual intervention.
+
+5. **encryptCredentials**: Given the sensitive nature of user credentials and API keys, this function encrypts this information before storing it in the database. This practice enhances the security of the system, protecting it from unauthorized access.
+
+6. **updateSettings**: Allows users to update or modify the Biometric Settings directly from the Frappe interface, including API keys, user credentials, and synchronization settings, making the system adaptable to changes in the operational environment or in user requirements.
