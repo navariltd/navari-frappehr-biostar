@@ -1,4 +1,4 @@
-## Biostar Biometrics Integration for Frappe
+## FrappeHR Integration with Biostar Biometrics
 FrappeHR integration with Biostar Biometrics
 
 
