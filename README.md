@@ -67,8 +67,30 @@ This doctype is used to store the following configuration details:
 
 
 
+#### Usage
+This application provides both scheduled tasks and manual functions to fetch and synchronize attendance data from Biostar Biometrics API based on the configurations set in the "Biometric Settings" doctype.
+
+**Manual Trigger:**
+1. Navigate to the "Biometric Settings" doctype.
+2. Fill in the required configuration details such as Username, Password, API Key, API Secret, Callback URL, Start Date, and End Date.
+3. Save the settings.
+4. To manually trigger attendance data synchronization:
+    - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
+    - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
+  
 
 
+
+#### Fetching Attendance Records
+Only two endpoints have been used to retrive attendance report from biostar server:
+1. [Authentication](https://bs2api.biostar2.com/#0b54ae8b-6744-44dd-8556-8001ae3139ff)
+2. [How to retrieve attendance report in json format](https://support.supremainc.com/en/support/solutions/articles/24000073530--biostar-2-ta-api-how-to-retrieve-report-in-json-format-via-biostar-2-ta-api)
+
+One needs to assign shifts to users on the biostar server, set up schedules and schedule templates on the biostar server, [here is a summary](https://www.youtube.com/watch?v=lqp8OEcPRyI&t=1023s) of how to do it. <br>
+This enables creation of checkin/checkout logs on the biostar server.
+
+
+ 
 #### Installation
 1. Ensure you have a working Frappe and ERPNext instance
 2. Clone this repository into your Frappe bench apps directory.
@@ -103,24 +125,4 @@ Add the generated keys to the Biometric Settings Form and save
 ```
 
 ![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
-
-
-#### Fetching Attendance Records
-Only two endpoints have been used to retrive attendance report from biostar server:
-1. [Authentication](https://bs2api.biostar2.com/#0b54ae8b-6744-44dd-8556-8001ae3139ff)
-2. [How to retrieve attendance report in json format](https://support.supremainc.com/en/support/solutions/articles/24000073530--biostar-2-ta-api-how-to-retrieve-report-in-json-format-via-biostar-2-ta-api)
-
-One needs to assign shifts to users on the biostar server, set up schedules and schedule templates on the biostar server, [here is a summary](https://www.youtube.com/watch?v=lqp8OEcPRyI&t=1023s) of how to do it. <br>
-This enables creation of checkin/checkout logs on the biostar server.
-
-
- #### Usage
-This application provides both scheduled tasks and manual functions to fetch and synchronize attendance data from Biostar Biometrics API based on the configurations set in the "Biometric Settings" doctype.
-
-**Manual Trigger:**
-1. Navigate to the "Biometric Settings" doctype.
-2. Fill in the required configuration details such as Username, Password, API Key, API Secret, Callback URL, Start Date, and End Date.
-3. Save the settings.
-4. To manually trigger attendance data synchronization:
-    - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
-    - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
+ 
