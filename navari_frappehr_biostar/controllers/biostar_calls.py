@@ -47,18 +47,13 @@ class BiostarConnect:
         self, attendance_id, start_date=today().__str__(), end_date=today().__str__()):
         headers = {"Content-Type": "application/json"}
         attendance_url = f"{ta_base_url}/report.json"
-        print(str(start_date))
 
         self.attendance_logs = []
 
         offset = 0
         limit = 200
 
-        frappe.publish_realtime(
-            "biostar_logs",
-            f"attendamce id {attendance_id}",
-            user=frappe.session.user,
-        )
+      
         while True:
             if not self.cookie or is_cookie_expired(self.cookie):
                 self.cookie = self.login()
@@ -177,7 +172,7 @@ def send_to_erpnext(employee_field_value, timestamp, log_type):
         "timestamp": timestamp.__str__(),
         "log_type": log_type,
     }
-
+   
     send_to_erpnext_url = f"{erpnext_instance_url}/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field"
 
     try:
@@ -215,53 +210,15 @@ def is_cookie_expired(cookie_string):
 
 
 @frappe.whitelist()
-def add_checkin_logs_for_current_day(username=username, password=password):
-
-    employees = frappe.db.get_all("Employee", filters={"attendance_device_id": ["!=", None], 'status': 'Active'},
-                                    fields=["name", "attendance_device_id"])
+def add_checkin_logs_for_current_day():
+    add_checkin_logs(start_date=today().__str__(), end_date=today().__str__())
     
+        
+def add_checkin_logs(start_date=None, end_date=None):
+    employees = frappe.db.get_all("Employee", filters={"attendance_device_id": ["!=", None]},
+                                    fields=["name", "attendance_device_id"])
     for employee in employees:
         attendance_id=employee.attendance_device_id
-        biostar = BiostarConnect(username, password)
-        biostar.get_attendance_report(attendance_id)
-        biostar.format_attendance_logs()
-        biostar.create_punch_logs()
-
-        if biostar.punch_logs:
-            for log in biostar.punch_logs:
-                send_to_erpnext(
-                    log.get("employee_field_value"),
-                    log.get("timestamp"),
-                    log.get("log_type"),
-                )
-
-        set_last_sync_of_checkin_as_now()
-
-@frappe.whitelist()
-def add_checkin_logs_for_specified_dates(start_date, end_date):
-    enqueue_fetching_logs(start_date, end_date)
-        
-#Push the job to the queue, background job
-def enqueue_fetching_logs(start_date, end_date):
-    job_id = frappe.enqueue(
-        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_specified_date",           
-        queue="long",
-        start_date=start_date,
-        end_date=end_date,
-        timeout=1000,
-        is_async=True,
-        at_front=False,
-    )
-
-    return job_id
-
-@frappe.whitelist()
-def add_checkin_logs_for_specified_date(start_date, end_date):
-    employees = frappe.db.get_all("Employee", filters={"attendance_device_id": ["!=", None], 'status': 'Active'},
-                                    fields=["name", "attendance_device_id"])
-    
-    for employee in employees:
-        attendance_id = employee.attendance_device_id
         biostar = BiostarConnect(username=username, password=password)
         biostar.get_attendance_report(attendance_id, start_date, end_date)
         biostar.format_attendance_logs()
@@ -279,6 +236,27 @@ def add_checkin_logs_for_specified_date(start_date, end_date):
 
         set_last_sync_of_checkin_as_now()
 
+@frappe.whitelist()
+def add_checkin_logs_for_specified_dates(start_date, end_date):      
+    enqueue_fetching_logs(start_date, end_date)
+        
+#Push the job to the queue, background job
+def enqueue_fetching_logs(start_date, end_date):
+    job_id = frappe.enqueue(
+        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_specified_date",           
+        queue="long",
+        start_date=start_date,
+        end_date=end_date,
+        timeout=1800,
+        is_async=True,
+        at_front=False,
+    )
+    return job_id
+
+@frappe.whitelist()
+def add_checkin_logs_for_specified_date(start_date, end_date):
+    add_checkin_logs(start_date=start_date, end_date=end_date)
+   
 
 def set_last_sync_of_checkin_as_now():
     shift_types = frappe.db.get_all(
@@ -294,4 +272,3 @@ def set_last_sync_of_checkin_as_now():
             update_modified=False,
         )
         frappe.db.commit()
-
