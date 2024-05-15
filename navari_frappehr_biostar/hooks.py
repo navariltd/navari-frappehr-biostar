@@ -227,7 +227,9 @@ app_license = "gpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 scheduler_events = {
-	"hourly": [
-        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"
-    ]
+	
+ "cron":{
+      "0 0 * * *":["navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"],  
+ },
 }
+
