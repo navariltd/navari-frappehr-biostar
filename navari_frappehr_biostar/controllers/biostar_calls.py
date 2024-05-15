@@ -54,6 +54,11 @@ class BiostarConnect:
         offset = 0
         limit = 200
 
+        employees = frappe.db.get_all("Employee", filters={"attendance_device_id": ["!=", None], 'status': 'Active'},
+                                      fields=["name", "attendance_device_id"])
+        attendance_id = []
+        for employee in employees:
+            attendance_id.append(employee.attendance_device_id)
         while True:
             if not self.cookie or is_cookie_expired(self.cookie):
                 self.cookie = self.login()
@@ -65,7 +70,7 @@ class BiostarConnect:
                 "type": "CUSTOM",
                 "start_datetime": start_date,
                 "end_datetime": end_date,
-                "user_id_list": [],
+                "user_id_list": attendance_id,
                 "group_id_list": ["1"],
                 "report_type": "REPORT_DAILY",
                 "report_filter_type": "",
