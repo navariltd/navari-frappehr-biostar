@@ -228,6 +228,6 @@ app_license = "gpl-3.0"
 # }
 scheduler_events = {
 	"hourly": [
-        "navari_vf.controllers.biostar_calls.add_checkin_logs_for_current_day"
+        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"
     ]
 }
