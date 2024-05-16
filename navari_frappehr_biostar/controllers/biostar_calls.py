@@ -213,11 +213,19 @@ def is_cookie_expired(cookie_string):
 def add_checkin_logs_for_current_day():
     add_checkin_logs(start_date=today().__str__(), end_date=today().__str__())
     
-        
+def check_releaving_date(employee):
+    if employee.relieving_date:
+        difference_relieving_days = frappe.utils.date_diff(frappe.utils.nowdate(), employee.relieving_date)
+        return difference_relieving_days.days >= 30
+    return False
+            
 def add_checkin_logs(start_date=None, end_date=None):
     employees = frappe.db.get_all("Employee", filters={"attendance_device_id": ["!=", None]},
                                     fields=["name", "attendance_device_id"])
     for employee in employees:
+        if check_releaving_date(employee):
+            continue
+        
         attendance_id=employee.attendance_device_id
         biostar = BiostarConnect(username=username, password=password)
         biostar.get_attendance_report(attendance_id, start_date, end_date)
