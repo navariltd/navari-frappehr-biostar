@@ -43,14 +43,41 @@ This doctype is used to store the following configuration details:
 
 #### Usage
 This application provides both scheduled tasks and manual functions to fetch and synchronize check in data from Biostar Biometrics API based on the configurations set in the "Biometric Settings" doctype.
+### Manual Trigger for Biostar Settings
 
-**Manual Trigger:**
-1. Navigate to the "Biometric Settings" doctype.
-2. Fill in the required configuration details such as Username, Password, API Key, API Secret, Callback URL, Start Date, and End Date.
-3. Save the settings.
-4. To manually trigger attendance data synchronization:
-    - Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
-    - Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
+#### Biostar Settings Doctype
+
+1.  **Navigate to the "Biometric Settings" doctype.**
+2.  **Fill in the required configuration details:**
+    -   Username
+    -   Password
+    -   API Key
+    -   API Secret
+    -   Callback URL
+    -   Start Date
+    -   End Date
+3.  **Save the settings.**
+4.  **To manually trigger attendance data synchronization:**
+    -   Call the `add_checkin_logs_for_current_day()` function to fetch attendance records for the current day.
+    -   Call the `add_checkin_logs_for_specified_dates(start_date, end_date)` function to fetch attendance records for a specified date range.
+
+#### Employee Doctype
+
+1.  **Navigate to the "Employee" doctype.**
+2.  **Choose the respective employee whose attendance you want to fetch.**
+3.  **Click on the "Fetch Attendance" button.** In the dialog, enter the dates for which you want to fetch the attendance. By default, the start date will be the last sync date (you can change this if needed).
+4.  **Check the "Employee Checkins" for the retrieved data.**
+![image (2)](https://github.com/navariltd/navari-frappehr-biostar/assets/60258622/df3caae8-d1d3-4231-9c47-2a7721a1a19a)
+
+### Fetching Attendance for Multiple Employees
+
+If you want to fetch attendance for employees who belong to the same department or a specific list:
+
+1.  **Navigate to the "Employee" doctype.**
+2.  **Use filters to get the respective employees you want to fetch.**
+3.  **Click on the "Action" button and choose "Fetch Attendance".** This will queue the job in the background and trigger the function to fetch the attendance.
+   ![image](https://github.com/navariltd/navari-frappehr-biostar/assets/60258622/619bc34c-bf92-4f3a-a4ea-c4e9cc6590a8)
+
   
 #### Fetching Attendance Records
 Only two endpoints have been used to retrive attendance report from biostar server:
