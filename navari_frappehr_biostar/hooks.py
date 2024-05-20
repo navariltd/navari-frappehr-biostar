@@ -9,6 +9,22 @@ app_license = "gpl-3.0"
 # Includes in <head>
 # ------------------
 
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                (
+                    "Employee-custom_last_attendance_sync_date",
+                  
+                ),
+            ]
+        ],
+    },
+]
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/navari_frappehr_biostar/css/navari_frappehr_biostar.css"
 # app_include_js = "/assets/navari_frappehr_biostar/js/navari_frappehr_biostar.js"
@@ -28,8 +44,8 @@ app_license = "gpl-3.0"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_js = {"Employee" : "public/js/fetch_employee_checkins.js"}
+doctype_list_js = {"Employee" : "public/js/fetch_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
