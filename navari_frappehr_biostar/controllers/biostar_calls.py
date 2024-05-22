@@ -88,6 +88,7 @@ class BiostarConnect:
 				)
 
 				if response.status_code == 200:
+				
 					"""no more records, break loop"""
 					if not response.json()["records"]:
 						if self.attendance_logs:
@@ -167,33 +168,15 @@ class BiostarConnect:
 
 @frappe.whitelist()
 def send_to_erpnext(employee_field_value, timestamp, log_type):
-	headers = {
-		"Authorization": "token " + api_key + ":" + api_secret,
-		"Accept": "application/json",
-	}
-
-	request_body = {
-		"employee_field_value": employee_field_value,
-		"timestamp": timestamp.__str__(),
-		"log_type": log_type,
-	}
-   
-	send_to_erpnext_url = f"{erpnext_instance_url}/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field"
-
+	employee_=frappe.get_doc("Employee", {"attendance_device_id": employee_field_value})
 	try:
-		response = requests.post(
-			send_to_erpnext_url, data=request_body, headers=headers
-		)
-
-		if response.status_code == 200:
-			frappe.log(f"Success: {str(response.json())}")
-		else:
-			frappe.msgprint(
-				f"Syncing attendance logs failed with status code: {response.status_code}"
-			)
+		new_employee_checkin=frappe.new_doc("Employee Checkin")
+		new_employee_checkin.employee=employee_.name
+		new_employee_checkin.log_type=log_type
+		new_employee_checkin.time=timestamp
+		new_employee_checkin.save()
 	except Exception as e:
-		frappe.throw(f"An error occurred: {e}")
-
+		frappe.log(f"An error occurred: {e}")
 
 def is_cookie_expired(cookie_string):
 	"""parse cookie string"""

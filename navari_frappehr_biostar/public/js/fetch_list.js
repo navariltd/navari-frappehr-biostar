@@ -1,10 +1,10 @@
 frappe.listview_settings['Employee'].onload = function(listview) {
     listview.page.add_action_item(__("Fetch Attendance"), function() {
-        submit_bulk_invoice(listview, "Employee");
+        submit_employee_list(listview, "Employee");
     });
 };
 
-function submit_bulk_invoice(listview, doctype) {
+function submit_employee_list(listview, doctype) {
     let names = [];
     $.each(listview.get_checked_items(), function(key, value) {
         names.push(value.name);
@@ -21,7 +21,7 @@ function submit_bulk_invoice(listview, doctype) {
                 label: 'Start Date',
                 fieldname: 'start_date',
                 fieldtype: 'Date',
-                default: frappe.datetime.nowdate(),  // Use frappe.datetime.nowdate() if custom_last_attendance_sync_date is not available
+                default: frappe.datetime.nowdate(),  
                 reqd: 1
             },
             {
@@ -34,7 +34,7 @@ function submit_bulk_invoice(listview, doctype) {
         primary_action_label: 'Fetch',
         primary_action: function(data) {
             d.hide();
-            let loader = document.getElementById('loader');  // Ensure loader element exists
+            let loader = document.getElementById('loader'); 
             if (loader) {
                 loader.style.display = "block";
             }
