@@ -245,7 +245,7 @@ doctype_list_js = {"Employee" : "public/js/fetch_list.js"}
 scheduler_events = {
 	
  "cron":{
-      "0 0 * * *":["navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"],  
+      "10 23 * * *":["navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"],  
  },
 }
 
