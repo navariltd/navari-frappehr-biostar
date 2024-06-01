@@ -1,10 +1,10 @@
 app_name = "navari_frappehr_biostar"
-app_title = "Navari Frappehr Biostar"
+app_title = "Navari Biostar Biometric Integration"
 app_publisher = "Navari Limited"
-app_description = "Frappe HR integration with Biostar Biometric"
+app_description = "Suprema Biostar Biometric Integration with FrappeHR by Navari Ltd"
 app_email = "mwendwa@navari.co.ke"
-app_license = "gpl-3.0"
-# required_apps = []
+app_license = "GNU Affero General Public License v3.0"
+required_apps = ["frappe/erpnext/hrms"]
 
 # Includes in <head>
 # ------------------
