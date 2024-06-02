@@ -4,7 +4,7 @@ app_publisher = "Navari Limited"
 app_description = "Suprema Biostar Biometric Integration with FrappeHR by Navari Ltd"
 app_email = "mwendwa@navari.co.ke"
 app_license = "GNU Affero General Public License v3.0"
-required_apps = ["frappe/erpnext/hrms"]
+required_apps = ["frappe/erpnext"]
 
 # Includes in <head>
 # ------------------
