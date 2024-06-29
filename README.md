@@ -12,7 +12,7 @@ This Frappe application offers a robust integration with Suprema Biostar Biometr
 
 ##### Key features
 2. **Automatic Data Sync**: Seamlessly sync employee check in data from Biostar Biometrics to Frappe HR, simplifying the attendance management process.
-3. **Configurable Settings**: Utilize the "Biometric Settings" doctype to easily configure and manage integration settings such as API keys, user credentials, and synchronization intervals.
+3. **Configurable Settings**: Utilize the "Biometric Settings" doctype to easily configure and manage integration settings such as user credentials, and synchronization intervals.
 4. **Manual and Scheduled Fetching**: Options to manually trigger data fetching or set up scheduled tasks for automatic updates, providing flexibility in how data is retrieved and managed.
 
 #### Key Functions
@@ -20,7 +20,7 @@ This Frappe application offers a robust integration with Suprema Biostar Biometr
 
 2. **fetchAttendanceRecords**: This function fetches employee check in data from Biostar, using date ranges provided by the user. It efficiently processes this data, readying it for synchronization with the Frappe HR database.
 
-3. **sendToFrappeHR**: After fetching the data from Biostar, this function sends it to the FrappeHR instance. It ensures that check in records are accurately reflected in the ERP system, aligning with HR and payroll modules for comprehensive management.
+3. **writeToFrappeHR**: This function takes the data fetched from Biostar and creates a new Employee Checkin record for each transaction. It ensures that check-in records are accurately reflected in the ERP system, aligning with HR and payroll modules for comprehensive management.
 
 4. **scheduleSync**: Automates the process of data synchronization. Users can configure the frequency at which the synchronization occurs, whether daily, weekly, or monthly, ensuring that the data in Frappe HR is always up to date without manual intervention.
 
