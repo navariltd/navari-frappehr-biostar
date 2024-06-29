@@ -12,10 +12,6 @@
   "password",
   "column_break_jltg",
   "ta_url",
-  "ta_auth_details_section",
-  "api_key",
-  "column_break_jynp",
-  "api_secret",
   "fetch_attendance_logs_section",
   "start_date",
   "column_break_vwvl",
@@ -51,25 +47,6 @@
    "label": "TA URL"
   },
   {
-   "fieldname": "ta_auth_details_section",
-   "fieldtype": "Section Break",
-   "label": "TA Auth Details"
-  },
-  {
-   "fieldname": "api_key",
-   "fieldtype": "Data",
-   "label": "API Key"
-  },
-  {
-   "fieldname": "column_break_jynp",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "api_secret",
-   "fieldtype": "Password",
-   "label": "API Secret"
-  },
-  {
    "fieldname": "fetch_attendance_logs_section",
    "fieldtype": "Section Break",
    "label": "Fetch Attendance Logs"
@@ -92,7 +69,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-05-07 15:23:17.634835",
+ "modified": "2024-06-29 11:13:02.126918",
  "modified_by": "Administrator",
  "module": "Navari Frappehr Biostar",
  "name": "Biostar Settings",
