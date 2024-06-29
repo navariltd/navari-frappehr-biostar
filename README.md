@@ -36,8 +36,6 @@ This doctype is used to store the following configuration details:
 1. **Username**: The user id used to log in to this page
 2. **Password**: The password used to log in to this page
 3. **TA URL**: The time and attendance URL
-4. **API Key**: API key generated for the user
-5. **API Secret**: API Secret generated for the user
 6. **Start Date**: The start date for fetching attendance records
 7. **End Date**: The end date for fetching attendance records
 
@@ -51,8 +49,6 @@ This application provides both scheduled tasks and manual functions to fetch and
 2.  **Fill in the required configuration details:**
     -   Username
     -   Password
-    -   API Key
-    -   API Secret
     -   Callback URL
     -   Start Date
     -   End Date
@@ -103,25 +99,3 @@ This integration not only enhances security and operational efficiency but also 
  bench --site [your-site-name] install-app navari_frappehr_biostar
  ```
  4. Configure the "Biometric Settings" doctype with appropriate values.
-
-Generate the API key and API secret and feed them in the TA Auth Details section.
-
-```
-To generate the keys above navigate to the "My Account" section
-```
-
-![Screenshot from 2024-05-10 12-49-05](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/ec9144e5-8ffd-4f0b-a5da-73ef8fcf2216)
-
-```
-Go to "Settings" 
-
-Click on "API Access" and Generate Keys
-```
-![Screenshot from 2024-05-10 12-49-19](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/ee40e69d-5b3a-48c1-b6f7-af9a2dae5849)
-
-```
-Add the generated keys to the Biometric Settings Form and save
-```
-
-![Screenshot from 2024-05-09 16-41-08](https://github.com/navariltd/navari-frappehr-biostar/assets/82759762/edbf8d78-3ad9-41ca-bdfb-fce7c2350ace)
- 

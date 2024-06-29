@@ -11,13 +11,8 @@ from datetime import datetime
 SETTINGS_DOCTYPE = "Biostar Settings"
 username = frappe.db.get_single_value(SETTINGS_DOCTYPE, "username")
 password = get_decrypted_password(SETTINGS_DOCTYPE, SETTINGS_DOCTYPE, "password")
-api_key = frappe.db.get_single_value(SETTINGS_DOCTYPE, "api_key")
-api_secret = get_decrypted_password(SETTINGS_DOCTYPE, SETTINGS_DOCTYPE, "api_secret")
 erpnext_instance_url = get_url().__str__()
 ta_base_url = frappe.db.get_single_value(SETTINGS_DOCTYPE, "ta_url").__str__()
-from frappe.core.doctype.server_script.server_script import setup_scheduler_events
-
-from frappe.utils import get_first_day, get_last_day
 
 
 class BiostarConnect:

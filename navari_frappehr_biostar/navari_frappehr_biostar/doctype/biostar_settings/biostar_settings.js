@@ -20,8 +20,6 @@ frappe.ui.form.on("Biostar Settings", {
       frm.doc.username &&
       frm.doc.password &&
       frm.doc.ta_url &&
-      frm.doc.api_key &&
-      frm.doc.api_secret &&
       frm.doc.start_date &&
       frm.doc.end_date
     ) {
