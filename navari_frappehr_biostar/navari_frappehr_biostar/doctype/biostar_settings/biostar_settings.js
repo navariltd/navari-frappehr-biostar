@@ -39,8 +39,12 @@ frappe.ui.form.on("Biostar Settings", {
       args: {
         start_date: frm.doc.start_date,
         end_date: frm.doc.end_date,
+        status: frm.doc.active,
       },
       callback: function (error, response) {
+        loader.style.display = "none";
+      },
+      error: function () {
         loader.style.display = "none";
       },
     });
