@@ -136,8 +136,6 @@ class BiostarConnect:
                 }
                 for log in self.attendance_logs
             ]
-        else:
-            frappe.throw("Attendance data not found")
 
     def create_punch_logs(self):
         """from the attendance report, create checkin/out logs to be sent to erpnext"""
@@ -218,7 +216,7 @@ def is_cookie_expired(cookie_string):
 @frappe.whitelist()
 def add_checkin_logs_for_current_day():
 
-    enqueue_fetching_logs(today().__str__(), today().__str__())
+    enqueue_fetching_logs(today().__str__(), today().__str__(), is_active)
 
 
 def check_relieving_date(employee):
@@ -274,16 +272,17 @@ def add_checkin_logs(start_date=None, end_date=None):
 def add_checkin_logs_for_specified_dates(start_date, end_date, status=is_active):
     if not status:
         return
-    enqueue_fetching_logs(start_date, end_date)
+    enqueue_fetching_logs(start_date, end_date, status)
 
 
 # Push the job to the queue, background job
-def enqueue_fetching_logs(start_date, end_date):
+def enqueue_fetching_logs(start_date, end_date, status):
     job_id = frappe.enqueue(
         "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_specified_date",
         queue="long",
         start_date=start_date,
         end_date=end_date,
+        status=status,
         timeout=2700,
         is_async=True,
         at_front=False,
