@@ -1,5 +1,3 @@
-
-
 // Copyright (c) 2024, Navari Limited and contributors
 // For license information, please see license.txt
 let loader = document.createElement("div");
@@ -15,48 +13,53 @@ let style = document.createElement("style");
 style.appendChild(document.createTextNode(css));
 document.head.appendChild(style);
 
-frappe.ui.form.on('Employee', {
-    refresh: function(frm) {
-        frm.add_custom_button(__('Fetch Attendance'), function() {
-            let d = new frappe.ui.Dialog({
-                title: 'Fetch Attendance',
-                fields: [
-                    {
-                        label: 'Start Date',
-                        fieldname: 'start_date',
-                        fieldtype: 'Date',
-                        default:frm.doc.custom_last_attendance_sync_date,
-                        reqd: 1
-                    },
-                    {
-                        label: 'End Date',
-                        fieldname: 'end_date',
-                        fieldtype: 'Date',
-                        reqd: 1
-                    }
-                ],
-                primary_action_label: 'Fetch',
-                primary_action: function(data) {
-                    d.hide();
-                    loader.style.display = "block";
-                    frappe.call({
-                        method: 'navari_frappehr_biostar.controllers.biostar_calls.fetch_single_employee_attendance',
-                        args: {
-                            start_date: data.start_date,
-                            end_date: data.end_date,
-                            employee: frm.doc.name
-                        },
-                        callback: function(r) {
-                            loader.style.display = "none";
-                            if (r.message) {
-                                frappe.msgprint(r.message);
-                            }
-                        }
-                    });
+frappe.ui.form.on("Employee", {
+  refresh: function (frm) {
+    frm
+      .add_custom_button(__("Fetch Attendance"), function () {
+        let d = new frappe.ui.Dialog({
+          title: "Fetch Attendance",
+          fields: [
+            {
+              label: "Start Date",
+              fieldname: "start_date",
+              fieldtype: "Date",
+              default: frm.doc.custom_last_attendance_sync_date,
+              reqd: 1,
+            },
+            {
+              label: "End Date",
+              fieldname: "end_date",
+              fieldtype: "Date",
+              reqd: 1,
+            },
+          ],
+          primary_action_label: "Fetch",
+          primary_action: function (data) {
+            d.hide();
+            loader.style.display = "block";
+            frappe.call({
+              method:
+                "navari_frappehr_biostar.controllers.biostar_calls.fetch_single_employee_attendance",
+              args: {
+                start_date: data.start_date,
+                end_date: data.end_date,
+                employee: frm.doc.name,
+              },
+              callback: function (r) {
+                loader.style.display = "none";
+                if (r.message) {
+                  frappe.msgprint(r.message);
                 }
+              },
+              error: function () {
+                loader.style.display = "none";
+              },
             });
-            d.show();
-        }).addClass("btn-primary");;
-    }
+          },
+        });
+        d.show();
+      })
+      .addClass("btn-primary");
+  },
 });
-
