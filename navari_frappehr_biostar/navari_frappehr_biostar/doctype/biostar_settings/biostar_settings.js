@@ -25,6 +25,16 @@ frappe.ui.form.on("Biostar Settings", {
     ) {
       frm
         .add_custom_button(__("Fetch Attendance Logs"), function () {
+          if (frm.doc.start_date > frm.doc.end_date) {
+            frappe.msgprint({
+              title: __("Error"),
+              indicator: "red",
+              message: __("Start Date cannot be greater than End Date"),
+            });
+
+            return;
+          }
+
           frm.events.fetch_attendance_logs(frm);
         })
         .addClass("btn-primary");
@@ -35,17 +45,10 @@ frappe.ui.form.on("Biostar Settings", {
     loader.style.display = "block";
     frappe.call({
       method:
-        "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_specified_dates",
+        "navari_frappehr_biostar.controllers.biostar_calls.get_employee_checkins",
       args: {
         start_date: frm.doc.start_date,
         end_date: frm.doc.end_date,
-        status: frm.doc.active,
-      },
-      callback: function (error, response) {
-        loader.style.display = "none";
-      },
-      error: function () {
-        loader.style.display = "none";
       },
     });
   },

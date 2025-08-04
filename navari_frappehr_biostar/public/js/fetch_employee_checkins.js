@@ -37,23 +37,37 @@ frappe.ui.form.on("Employee", {
           primary_action_label: "Fetch",
           primary_action: function (data) {
             d.hide();
+            const start_date = data.start_date;
+            const end_date = data.end_date;
+
+            if (start_date > end_date) {
+              frappe.msgprint({
+                title: __("Error"),
+                indicator: "red",
+                message: __("Start Date cannot be greater than End Date"),
+              });
+
+              return;
+            }
+
             loader.style.display = "block";
+
             frappe.call({
               method:
-                "navari_frappehr_biostar.controllers.biostar_calls.fetch_single_employee_attendance",
+                "navari_frappehr_biostar.controllers.biostar_calls.get_employee_checkins",
               args: {
-                start_date: data.start_date,
-                end_date: data.end_date,
-                employee: frm.doc.name,
+                start_date: start_date,
+                end_date: end_date,
+                employee: { name: frm.doc.name },
               },
               callback: function (r) {
-                loader.style.display = "none";
-                if (r.message) {
-                  frappe.msgprint(r.message);
+                if (r.message && r.message.job_id) {
+                  check_job_status(r.message.job_id, frm);
                 }
               },
               error: function () {
                 loader.style.display = "none";
+                frappe.msgprint(__("Failed to start background job"));
               },
             });
           },
