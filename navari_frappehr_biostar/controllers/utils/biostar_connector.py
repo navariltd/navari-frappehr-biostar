@@ -252,7 +252,6 @@ def is_cookie_expired(cookie_string):
 
 
 def add_checkin_data(punch_logs, end_date):
-    msgprint(_("The task has been enqueued as a background job."), alert=True)
     frappe.enqueue(
         "navari_frappehr_biostar.controllers.utils.biostar_connector.create_employee_checkins",
         queue="long",
@@ -260,6 +259,8 @@ def add_checkin_data(punch_logs, end_date):
         end_date=end_date,
         is_async=True,
     )
+
+    msgprint(_("The task has been enqueued as a background job."), alert=True)
 
 
 def create_employee_checkins(punch_logs, end_date=None):

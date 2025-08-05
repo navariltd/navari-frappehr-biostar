@@ -34,10 +34,6 @@ function submit_employee_list(listview, doctype) {
     primary_action_label: "Fetch",
     primary_action: function (data) {
       d.hide();
-      let loader = document.getElementById("loader");
-      if (loader) {
-        loader.style.display = "block";
-      }
       const start_date = data.start_date;
       const end_date = data.end_date;
 
@@ -59,11 +55,11 @@ function submit_employee_list(listview, doctype) {
           end_date: end_date,
           employees: employees,
         },
-        callback: function (r) {
-          if (loader) {
-            loader.style.display = "none";
-          }
+        error: function () {
+          frappe.msgprint(__("Failed to start fetch attendance data"));
         },
+        freeze: true,
+        freeze_message: "Gettting data...",
       });
     },
   });
