@@ -1,6 +1,7 @@
 import frappe
 from .utils.biostar_connector import BiostarConnector
 from frappe.utils.password import get_decrypted_password
+from frappe.utils import getdate
 
 SETTINGS_DOCTYPE = "Biostar Settings"
 
@@ -32,3 +33,8 @@ def get_employee_checkins(start_date, end_date, employees=None):
 
     biostar.get_attendance_report(attendance_ids, start_date, end_date)
     biostar.format_attendance_logs()
+
+
+def add_checkin_logs_for_current_day():
+    today = getdate().strftime("%Y-%m-%d")
+    return get_employee_checkins(today, today)
