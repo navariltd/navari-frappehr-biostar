@@ -16,10 +16,7 @@ fixtures = [
             [
                 "name",
                 "in",
-                (
-                    "Employee-custom_last_attendance_sync_date",
-                  
-                ),
+                ("Employee-custom_last_attendance_sync_date",),
             ]
         ],
     },
@@ -44,8 +41,8 @@ fixtures = [
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Employee" : "public/js/fetch_employee_checkins.js"}
-doctype_list_js = {"Employee" : "public/js/fetch_list.js"}
+doctype_js = {"Employee": "public/js/fetch_employee_checkins.js"}
+doctype_list_js = {"Employee": "public/js/fetch_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -243,9 +240,15 @@ doctype_list_js = {"Employee" : "public/js/fetch_list.js"}
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 scheduler_events = {
-	
- "cron":{
-      "10 23 * * *":["navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"],  
- },
+    "cron": {
+        "10 23 * * *": [
+            "navari_frappehr_biostar.controllers.biostar_calls.add_checkin_logs_for_current_day"
+        ],
+        "0 3 * * *": [
+            "navari_frappehr_biostar.controllers.biostar_calls.check_for_yesterday_logs"
+        ],
+        "30 5 * * *": [
+            "navari_frappehr_biostar.controllers.biostar_calls.check_for_yesterday_logs_again"
+        ],
+    },
 }
-

@@ -15,6 +15,7 @@
   "active",
   "fetch_attendance_logs_section",
   "start_date",
+  "last_server_status",
   "column_break_vwvl",
   "end_date"
  ],
@@ -71,12 +72,20 @@
    "fieldname": "active",
    "fieldtype": "Check",
    "label": "Active"
+  },
+  {
+   "default": "Online",
+   "fieldname": "last_server_status",
+   "fieldtype": "Select",
+   "label": "Last Server Status",
+   "options": "Online\nOffline",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-11-09 10:49:21.677739",
+ "modified": "2025-09-02 16:14:44.570354",
  "modified_by": "Administrator",
  "module": "Navari Frappehr Biostar",
  "name": "Biostar Settings",
@@ -93,6 +102,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

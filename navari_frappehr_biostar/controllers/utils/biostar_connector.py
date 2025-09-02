@@ -18,7 +18,41 @@ class BiostarConnector:
     def get_biostar_settings(self):
         return frappe.get_doc("Biostar Settings")
 
+    def check_server_status(self):
+        try:
+            response = requests.get(self.base_url, timeout=5, verify=False)
+            response.raise_for_status()
+            return True
+        except requests.RequestException as e:
+            frappe.log_error("Biostar Server Connection Error", str(e))
+            system_managers = frappe.get_all(
+                "Has Role",
+                filters={"role": "System Manager", "parenttype": "User"},
+                pluck="parent",
+            )
+            if frappe.db.get_value("Email Account", {"default_outgoing": 1}, "name"):
+                for user in system_managers:
+                    frappe.sendmail(
+                        recipients=[user],
+                        subject="Biostar Server Connection Error",
+                        message=_(
+                            "Unable to connect to Biostar server. Please ensure it is online."
+                        ),
+                    )
+            return False
+
     def login(self):
+        # Check if the server is online and reachable
+        if not self.check_server_status():
+            frappe.db.set_value(
+                "Biostar Settings", "Biostar Settings", "last_server_status", "Offline"
+            )
+            return
+
+        frappe.db.set_value(
+            "Biostar Settings", "Biostar Settings", "last_server_status", "Online"
+        )
+
         login_url = f"{self.base_url}/login"
         request_body = {
             "notification_token": "string",
