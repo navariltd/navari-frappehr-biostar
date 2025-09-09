@@ -1,7 +1,7 @@
 import frappe
 from .utils.biostar_connector import BiostarConnector
 from frappe.utils.password import get_decrypted_password
-from frappe.utils import getdate
+from frappe.utils import getdate, add_days
 
 SETTINGS_DOCTYPE = "Biostar Settings"
 
@@ -35,6 +35,32 @@ def get_employee_checkins(start_date, end_date, employees=None):
     biostar.format_attendance_logs()
 
 
+@frappe.whitelist()
 def add_checkin_logs_for_current_day():
-    today = getdate().strftime("%Y-%m-%d")
-    return get_employee_checkins(today, today)
+    start_date = getdate().strftime("%Y-%m-%d")
+    end_date = start_date
+    return get_employee_checkins(start_date, end_date)
+
+
+def add_checkin_logs_for_date_range():
+    last_server_status = frappe.db.get_value(
+        "Biostar Settings", "Biostar Settings", "last_server_status"
+    )
+
+    if last_server_status == "Online":
+        frappe.log_error("Server was Online", "Skipping cron job")
+        return
+
+    start_date = add_days(getdate(), -1).strftime("%Y-%m-%d")
+    end_date = start_date
+    return get_employee_checkins(start_date, end_date)
+
+
+@frappe.whitelist()
+def check_for_yesterday_logs():
+    add_checkin_logs_for_date_range()
+
+
+@frappe.whitelist()
+def check_for_yesterday_logs_again():
+    add_checkin_logs_for_date_range()
