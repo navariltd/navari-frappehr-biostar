@@ -1,7 +1,7 @@
 [project]
 name = "navari_frappehr_biostar"
 authors = [
-    { name = "Navari Limited", email = "mwendwa@navari.co.ke"}
+    { name = "Navari Limited", email = "solutions@navari.co.ke"}
 ]
 description = "Frappe HR integration with Biostar Biometric"
 requires-python = ">=3.10"
@@ -11,6 +11,7 @@ dependencies = [
     # "frappe~=15.0.0" # Installed and managed by bench.
 ]
 
+
 [build-system]
 requires = ["flit_core >=3.4,<4"]
 build-backend = "flit_core.buildapi"
@@ -18,3 +19,7 @@ build-backend = "flit_core.buildapi"
 # These dependencies are only installed when developer mode is enabled
 [tool.bench.dev-dependencies]
 # package_name = "~=1.1.0"
+
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0,<17.0.0"
