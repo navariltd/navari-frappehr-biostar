@@ -1,7 +1,7 @@
 {
   "doctype": "Sidebar",
   "name": "Biostar Integration",
-  "title": "Biostar Integration",
+  "title": "Biostar Biometric Integration",
   "app": "navari_frappehr_biostar",
   "module": "Navari Frappehr Biostar",
   "standard": 1,

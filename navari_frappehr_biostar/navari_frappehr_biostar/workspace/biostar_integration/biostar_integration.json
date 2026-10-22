@@ -1,13 +1,13 @@
 {
   "doctype": "Workspace",
   "name": "Biostar Integration",
-  "title": "Biostar Integration",
-  "label": "Biostar Integration",
+  "title": "Biostar Biometric Integration",
+  "label": "Biostar Biometric Integration",
   "module": "Navari Frappehr Biostar",
   "icon": "fingerprint",
   "public": 1,
   "is_hidden": 0,
-  "content": "[{\"id\": \"biostar-header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Biostar Integration</span>\", \"col\": 12}}, {\"id\": \"biostar-attendance\", \"type\": \"card\", \"data\": {\"card_name\": \"Attendance\", \"col\": 6}}, {\"id\": \"biostar-setup\", \"type\": \"card\", \"data\": {\"card_name\": \"Setup\", \"col\": 6}}]",
+  "content": "[{\"id\":\"biostar-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Biostar Integration</span>\",\"col\":12}},{\"id\":\"biostar-attendance\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":6}},{\"id\":\"biostar-setup\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":6}}]",
   "links": [
     {
       "type": "Card Break",

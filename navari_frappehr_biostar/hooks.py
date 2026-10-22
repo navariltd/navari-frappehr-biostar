@@ -260,7 +260,7 @@ add_to_apps_screen = [
     {
         "name": app_name,
         "logo": "/assets/navari_frappehr_biostar/images/biostar-logo.svg",
-        "title": "Biostar Integration",
+        "title": "Biostar Biometric Integration",
         "route": app_home,
         "sequence_id": 3,
     }
