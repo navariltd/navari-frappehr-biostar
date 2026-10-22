@@ -252,3 +252,16 @@ scheduler_events = {
         ],
     },
 }
+
+# Frappe v17 application navigation
+app_home = "/desk/biostar-integration"
+
+add_to_apps_screen = [
+    {
+        "name": app_name,
+        "logo": "/assets/navari_frappehr_biostar/images/biostar-logo.svg",
+        "title": "Biostar Integration",
+        "route": app_home,
+        "sequence_id": 3,
+    }
+]

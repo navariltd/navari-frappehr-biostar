@@ -1,0 +1,66 @@
+{
+  "doctype": "Sidebar",
+  "name": "Biostar Integration",
+  "title": "Biostar Integration",
+  "app": "navari_frappehr_biostar",
+  "module": "Navari Frappehr Biostar",
+  "standard": 1,
+  "header_icon": "fingerprint",
+  "items": [
+    {
+      "doctype": "Sidebar Item",
+      "type": "Link",
+      "label": "Home",
+      "link_type": "Workspace",
+      "link_to": "Biostar Integration",
+      "icon": "house",
+      "idx": 1
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Section Break",
+      "label": "Attendance",
+      "icon": "calendar-check",
+      "idx": 2
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Link",
+      "label": "Employee Checkin",
+      "link_type": "DocType",
+      "link_to": "Employee Checkin",
+      "idx": 3
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Link",
+      "label": "Employee",
+      "link_type": "DocType",
+      "link_to": "Employee",
+      "idx": 4
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Link",
+      "label": "Shift Type",
+      "link_type": "DocType",
+      "link_to": "Shift Type",
+      "idx": 5
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Section Break",
+      "label": "Setup",
+      "icon": "settings",
+      "idx": 6
+    },
+    {
+      "doctype": "Sidebar Item",
+      "type": "Link",
+      "label": "Biostar Settings",
+      "link_type": "DocType",
+      "link_to": "Biostar Settings",
+      "idx": 7
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "doctype": "Dock",
+  "name": "navari_frappehr_biostar",
+  "app": "navari_frappehr_biostar",
+  "standard": 1,
+  "user": "",
+  "items": [
+    {
+      "added": 0,
+      "hidden": 0,
+      "icon": "fingerprint",
+      "link_to": "Biostar Integration",
+      "link_type": "Sidebar",
+      "title": "Biostar Integration"
+    }
+  ]
+}
