@@ -84,9 +84,13 @@ jobs:
       - name: Install
         working-directory: /home/runner/frappe-bench
         run: |
+          bench get-app --branch develop erpnext
+          bench get-app --branch develop hrms
           bench get-app navari_frappehr_biostar $GITHUB_WORKSPACE
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
+          bench --site test_site install-app erpnext
+          bench --site test_site install-app hrms
           bench --site test_site install-app navari_frappehr_biostar
           bench build
         env:
