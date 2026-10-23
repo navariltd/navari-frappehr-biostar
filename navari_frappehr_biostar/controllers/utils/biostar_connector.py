@@ -275,7 +275,7 @@ def is_cookie_expired(cookie_string):
     bs_ta_session_id_cookie = cookie.get("bs-ta-session-id")
 
     """ Check if 'bs-ta-session-id' cookie exists and has 'expires' attribute """
-    if bs_ta_session_id_cookie is None or "expires" not in bs_ta_session_id_cookie:
+    if bs_ta_session_id_cookie is None or not bs_ta_session_id_cookie["expires"]:
         return False
 
     expires = bs_ta_session_id_cookie["expires"]

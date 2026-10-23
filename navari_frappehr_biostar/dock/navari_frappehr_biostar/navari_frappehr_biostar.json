@@ -13,5 +13,6 @@
       "link_type": "Sidebar",
       "title": "Biostar Biometric Integration"
     }
-  ]
+  ],
+  "mount_on": "hrms"
 }

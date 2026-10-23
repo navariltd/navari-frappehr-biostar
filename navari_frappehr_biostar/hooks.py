@@ -253,15 +253,5 @@ scheduler_events = {
     },
 }
 
-# Frappe v17 application navigation
+# Frappe v16.50 companion navigation is defined in the Dock JSON.
 app_home = "/desk/biostar-integration"
-
-add_to_apps_screen = [
-    {
-        "name": app_name,
-        "logo": "/assets/navari_frappehr_biostar/images/biostar-logo.svg",
-        "title": "Biostar Biometric Integration",
-        "route": app_home,
-        "sequence_id": 3,
-    }
-]
