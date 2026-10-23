@@ -1,0 +1,55 @@
+{
+  "doctype": "Workspace",
+  "name": "Biostar Integration",
+  "title": "Biostar Biometric Integration",
+  "label": "Biostar Biometric Integration",
+  "module": "Navari Frappehr Biostar",
+  "icon": "fingerprint",
+  "public": 1,
+  "is_hidden": 0,
+  "content": "[{\"id\":\"biostar-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Biostar Integration</span>\",\"col\":12}},{\"id\":\"biostar-attendance\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":6}},{\"id\":\"biostar-setup\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":6}}]",
+  "links": [
+    {
+      "type": "Card Break",
+      "label": "Attendance",
+      "link_type": "DocType",
+      "link_count": 3
+    },
+    {
+      "type": "Link",
+      "label": "Employee Checkin",
+      "link_type": "DocType",
+      "link_to": "Employee Checkin"
+    },
+    {
+      "type": "Link",
+      "label": "Employee",
+      "link_type": "DocType",
+      "link_to": "Employee"
+    },
+    {
+      "type": "Link",
+      "label": "Shift Type",
+      "link_type": "DocType",
+      "link_to": "Shift Type"
+    },
+    {
+      "type": "Card Break",
+      "label": "Setup",
+      "link_type": "DocType",
+      "link_count": 1
+    },
+    {
+      "type": "Link",
+      "label": "Biostar Settings",
+      "link_type": "DocType",
+      "link_to": "Biostar Settings"
+    }
+  ],
+  "shortcuts": [],
+  "charts": [],
+  "number_cards": [],
+  "quick_lists": [],
+  "custom_blocks": [],
+  "roles": []
+}
